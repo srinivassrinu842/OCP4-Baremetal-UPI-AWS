@@ -1,0 +1,19 @@
+{
+  "ignition": {
+    "config": {
+      "merge": [
+        {
+          "source": "https://sreeni-baremetal-upi.s3.amazonaws.com/bootstrap.ign",
+          "verification": {}
+        }
+      ]
+    },
+    "timeouts": {},
+    "version": "3.2.0"
+  },
+  "networkd": {},
+  "passwd": {},
+  "storage": {},
+  "systemd": {}
+}
+

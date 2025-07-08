@@ -1,0 +1,7 @@
+key_name            = "nv-kp"
+s3_bucket_name      = "sreeni-baremetal-upi"
+resource_prefix     = "sreeni-baremetal-upi"
+private_domain_name = "sreeni.com"
+ec2_instance_ami    = "ami-0ff8a91507f77f867"
+ocp4_cluster_name   = "ocp4-bm-upi"
+aws_region          = "us-east-1"
