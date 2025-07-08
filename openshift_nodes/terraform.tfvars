@@ -1,23 +1,24 @@
-create_bootstrap               = true
-create_masters                 = true
-create_workers                 = false
+create_bootstrap               = true                                       # initial enable to create the bastion host and then disable once cluster is built
+create_masters                 = false                                      # enable only when you see "Waiting up to 20m0s for the Kubernetes API" in the bootstrap node
+create_workers                 = false                                      # enable only when you want to build the worker nodes
 
 bootstrap_user_data_file       = "ignitions/merge-bootstrap.ign"
-resource_prefix                = "sreeni-baremetal-upi"
+resource_prefix                = "<Your-Resource-Prefix>"
 bootstrap_ami_id               = "ami-05483066c3caaccf5"
-bootstrap_subnet_id            = "subnet-0dfca36da21a52e5a"
+bootstrap_subnet_id            = "<Public-Subnet1-ID-Created-During-Infra-Build>"
 
-instance_security_group        = "sg-09bb80deab602727f"
+instance_security_group        = "<Security-Group-ID-Created-During-Infra-Build>"
 
 master_ami_id                  = "ami-05483066c3caaccf5"
-master_subnet_ids              = ["subnet-0ba6a91fdd02cfe57", "subnet-012636337cfd7c2dd", "subnet-0f080bf8608b924cc"]
+master_subnet_ids              = ["subnet-XXXXXXXX", "subnet-XXXXXXXXXX", "subnet-XXXXXXXX"]
 master_user_data_file          = "ignitions/master.ign"
 
 worker_ami_id                  = "ami-05483066c3caaccf5"
-worker_subnet_ids              = ["subnet-0ba6a91fdd02cfe57", "subnet-012636337cfd7c2dd"]
+worker_subnet_ids              = ["subnet-XXXXXXXX", "subnet-XXXXXXXXXX"]
 worker_user_data_file          = "ignitions/worker.ign"
 
-target_group_22623_arn         = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/sreeni-baremetal-upi-22623/ec26ac35da7c49dc"
-target_group_443_arn           = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/sreeni-baremetal-upi-443/3ecbad0737d34d83"
-target_group_6443_arn          = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/sreeni-baremetal-upi-6443/cad3a09566967fa4"
-target_group_80_arn            = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/sreeni-baremetal-upi-80/82155ca73f62b33f"
+# Below details should be get post the infra build
+target_group_22623_arn         = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+target_group_443_arn           = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+target_group_6443_arn          = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+target_group_80_arn            = "arn:aws:elasticloadbalancing:us-east-1:036990103311:targetgroup/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
