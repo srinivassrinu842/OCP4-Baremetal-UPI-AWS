@@ -1,7 +1,0 @@
-key_name            = "<Your-Key-Pair>"
-s3_bucket_name      = "<Your-S3-Bucket>"
-resource_prefix     = "<Your-Prefix-reference>"
-private_domain_name = "<Your-Private-Domain>"
-ec2_instance_ami    = "ami-0ff8a91507f77f867"
-ocp4_cluster_name   = "<Your-Cluster-name>"
-aws_region          = "us-east-1"
