@@ -5,7 +5,8 @@ This Terraform configuration provisions the OpenShift 4 UPI nodes (bootstrap, ma
 ## Staged Workflow
 1. **Apply 1:** Set `create_bootstrap = true`, `create_masters = false`, `create_workers = false` (default). This creates only the bootstrap node.
 2. Wait for the bootstrap process to complete (monitor OpenShift install logs).
-3. **Apply 2:** Set `create_bootstrap = false`, `create_masters = true`, `create_workers = true`. This creates the master and worker nodes.
+3. Then copy the ignition files to ignitions directory in the current path. (Using SCP from the bastion host)
+4. **Apply 2:** Set `create_bootstrap = false`, `create_masters = true`, `create_workers = true`. This creates the master and worker nodes.
 
 ## Variables
 | Name                        | Description                                      | Required |
