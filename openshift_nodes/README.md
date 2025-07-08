@@ -41,7 +41,7 @@ This Terraform configuration provisions the OpenShift 4 UPI nodes (bootstrap, ma
    create_bootstrap = true
    create_masters   = false
    create_workers   = false
-   bootstrap_user_data_file = "bootstrap.ign"
+   bootstrap_user_data_file = "ignitions/bootstrap.ign"
    # ...other variables...
    ```
    ```sh
@@ -53,8 +53,8 @@ This Terraform configuration provisions the OpenShift 4 UPI nodes (bootstrap, ma
    create_bootstrap = false
    create_masters   = true
    create_workers   = true
-   master_user_data_file = "master.ign"
-   worker_user_data_file = "worker.ign"
+   master_user_data_file = "ignitions/master.ign"
+   worker_user_data_file = "ignitions/worker.ign"
    # ...other variables...
    ```
    ```sh
